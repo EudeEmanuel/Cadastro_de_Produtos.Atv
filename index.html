@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro de Produtos</title>
+    </head>
+
+    <body>
+
+        <h2>Cadastro de Produtos (Array de Objetos)</h2>
+
+        <div>
+            Produto: <input type="text" id="inputProduto" placeholder="Ex: Mouse">
+            Preço (R$): <input type="number" id="inputPreco" placeholder="Ex: 99.90">
+            Quantidade: <input type="number" id="inputQtd" placeholder="Ex: 2">
+
+            <button onclick="adicionar()">Adicionar Produto</button>
+            <button onclick="listar()">Listar Produtos</button>
+            <button onclick="resumo()">Resumo</button>
+            <button onclick="limparTudo()">Limpar Tudo</button>
+        </div>
+
+        <hr>
+
+        <h3>Remover por índice</h3>
+        <input type="number" id="inputIndice" placeholder="Ex: 0">
+        <button onclick="remover()">Remover</button>
+
+        <div id="resultado"></div>
+        
+        <script src="script.js"></script>
+    </body>
+</html>
