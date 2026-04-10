@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade Programação Web 2</title>
+</head>
+<body>
+    <script>
+        /*Exercicio 1  Maior valor*/
+        function maiorValor(vetor) {
+            let maior = vetor[0];
+            let posicao = 0;
+
+            for (let i = 1; i < vetor.length; i++) {
+                if (vetor[i] > maior) {
+                    maior = vetor[i];
+                    posicao = i;
+                }
+            }
+
+            return `maior = ${maior}, posicao = ${posicao}`;
+        }
+
+        /* Exercicio 2  Contagem de numeros pares */
+        function contarPares(vetor) {
+            let contador = 0;
+
+            for (let i = 0; i < vetor.length; i++) {
+                if (vetor[i] % 2 === 0) {
+                    contador++;
+                }
+            }
+            return contador;
+        }
+
+        // --- TESTES NO CONSOLE ---
+        
+        console.log("Resultado Ex 1:");
+        console.log(maiorValor([5, 9, 2, 9, 1]));
+
+        console.log("Resultado Ex 2:");
+        console.log(contarPares([2, 3, 4, 7, 10]));
+
+    </script>
+</body>
+</html>
