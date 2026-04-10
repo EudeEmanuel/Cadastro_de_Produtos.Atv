@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Prova</title>
+</head>
+<body>
+<h2>Preencher Array</h2>
+
+<input id="entrada" type="text" placeholder="Digite um item" />
+<button id="btnAdicionar">Adicionar</button>
+<button id="btnMostrar">Mostrar conteúdo</button>
+<button id="btnLimpar">Limpar</button>
+
+<div id="saida" style="margin-top: 16px;"></div>
+
+<script>
+const itens = [];
+
+const entrada = document.getElementById("entrada");
+const saida = document.getElementById("saida");
+
+document.getElementById("btnAdicionar").addEventListener("click", () => {
+let valor = entrada.value.trim();
+
+if (valor === "") {
+alert("Digite um item antes de adicionar.");
+return;
+}
+valor = valor.toLowerCase() + " ";
+
+itens.push(valor);
+
+entrada.value = "";
+entrada.focus();
+
+saida.innerHTML = `<p>Item adicionado. Total: <strong>${itens.length}</strong></p>`;
+});
+
+document.getElementById("btnMostrar").addEventListener("click", () => {
+if (itens.length === 0) {
+saida.innerHTML = "<p>Nenhum item inserido ainda.</p>";
+return;
+}
+
+let html = "<h3>Conteúdo do array</h3><ul>";
+
+for (let i = 0; i < itens.length; i++) {
+html += `<li>${i} → ${itens[i]}</li>`;
+}
+
+html += "</ul>";
+
+saida.innerHTML = html;
+});
+
+document.getElementById("btnLimpar").addEventListener("click", () => {
+let itens = [];
+
+saida.innerHTML = "<p>Array limpo.</p>";
+entrada.value = "";
+entrada.focus();
+});
+</script>
+</body>
+</html>
